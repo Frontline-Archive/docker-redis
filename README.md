@@ -28,13 +28,13 @@ $ docker run -d --name sinet-redis -p 6379:6379 sinet/redis:2.8
 
 If you want to preset credentials you can set the following environment variables:
 
-* `REDIS_PASS` to set a specific password
+* `REDIS_PASSWORD` to set a specific password
 
 ```
 $ docker run -d \
     --name sinet-redis \
     -p 6379:6379 \
-    -e REDIS_PASS=mypassword \
+    -e REDIS_PASSWORD=mypassword \
     sinet/redis:2.8
 ```
 

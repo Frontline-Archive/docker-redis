@@ -2,20 +2,20 @@
 
 # Initializing redis
 if [ ! -f /data/redis_configured ]; then
-	if [ "${REDIS_PASS}" != "" ];then
+	if [ "${REDIS_PASSWORD}" != "" ];then
 		echo "Securing Redis with a password..."
 		
-		echo -e "\nrequirepass ${REDIS_PASS}" >> /usr/local/etc/redis/redis.conf
+		echo -e "\nrequirepass ${REDIS_PASSWORD}" >> /usr/local/etc/redis/redis.conf
 
 		echo "========================================================================"
-		echo "Redis Password: \"${REDIS_PASS}\""
+		echo "Redis Password: \"${REDIS_PASSWORD}\""
 		echo ""
 		echo "Please remember to change the above password as soon as possible!"
 		echo "========================================================================"
 	else
 		echo "========================================================================"
 		echo "Your redis instance is not secure."
-		echo "Try running container with \"-e REDIS_PASS=yourpassword\""
+		echo "Try running container with \"-e REDIS_PASSWORD=yourpassword\""
 		echo "========================================================================"
 	fi
 
